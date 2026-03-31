@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEET Test Portal — Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-logo">🧬</div>
+    <h1>NEET Test Portal</h1>
+    <p>Enter your name to begin the mock test.<br>Questions are from Physics, Chemistry &amp; Biology.</p>
+
+    <form method="POST">
+      <label for="name">Your Full Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Arjun Kumar" autocomplete="off" autofocus>
+      {% if error %}
+        <p class="error-msg">⚠ {{ error }}</p>
+      {% else %}
+        <div style="height:18px;"></div>
+      {% endif %}
+      <button type="submit" class="btn btn-primary">
+        Start Test &nbsp;→
+      </button>
+    </form>
+
+    <div class="login-meta">
+      <div class="login-meta-item">
+        <strong>20</strong>
+        <span>Questions</span>
+      </div>
+      <div class="login-meta-item">
+        <strong>60</strong>
+        <span>Minutes</span>
+      </div>
+      <div class="login-meta-item">
+        <strong>+4 / −1</strong>
+        <span>Marking</span>
+      </div>
+      <div class="login-meta-item">
+        <strong>80</strong>
+        <span>Max Score</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
